@@ -1,0 +1,9 @@
+{
+  "postgres": {
+    "username": "postgres",
+    "password": "123456",
+    "database": "insidencias-test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

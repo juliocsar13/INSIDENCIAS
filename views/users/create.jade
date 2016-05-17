@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+    .row
+        .col-lg-2
+            a.btn.btn-default#a_click( href='#',type='button') ALERTA
+
+
+        .col-lg-5
+            #capa Esta es la capa independiente
+        .col-lg-5
+            #mielemento CONTENIDO DE ELEMENTO
+        .col-lg-12
+            form
+              | Nombre: 
+              input(type='text', name='nombre')
+              br
+              input#mayoria_edad(type='checkbox', name='mayor_edad', value='1')
+              |  Soy mayor de edad
+              br
+              #formulariomayores(style='display: none')
+                | Dato para mayores de edad: 
+                input(type='text', name='mayores_edad')
+//- 
+        .col-md-6
+            h5 Crear un nuevo Usuario
+            form(action="/users/new", method="post")
+                input.form-control(type="text", name="username")
+                input.form-control(type="submit")
+        .col-md-6
+            h5 Actualizar Fecha
+            input#date_time.form-control(type="date")

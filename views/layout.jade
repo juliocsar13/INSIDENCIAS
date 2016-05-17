@@ -2,6 +2,350 @@ doctype html
 html
   head
     title= title
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='Alex Grozav')
+    title Smartech - Responsive Admin Template
+    // Favicon
+    link(rel='shortcut icon', href='favicon.ico', type='image/x-icon')
+    link(rel='icon', href='favicon.ico', type='image/x-icon')
+    // Bootstrap Core CSS
+    link(href='/smartech/css/bootstrap.css', rel='stylesheet')
+    link(href='/smartech/css/plugins/social-buttons.css', rel='stylesheet')
+    // MetisMenu CSS
+    link(href='/smartech/css/plugins/metisMenu/metisMenu.min.css', rel='stylesheet')
+    // Timeline CSS
+    link(href='/smartech/css/plugins/timeline.css', rel='stylesheet')
+    // Custom CSS
+    link(href='/smartech/css/smartech.css', rel='stylesheet')
+    // Morris Charts CSS
+    link(href='/smartech/css/plugins/morris.css', rel='stylesheet')
+    // Custom Fonts
+    // Animate CSS
+    link(href='/smartech/css/animate.css', rel='stylesheet')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(href='/smartech/font-awesome/css/font-awesome.min.css', rel='stylesheet')
+
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+    script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+    script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
   body
-    block content
+    #wrapper
+      // Navigation
+      nav.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bottom: 0')
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.sidebar-toggle.hidden-xs(href='javascript:void(0);')
+            i.fa.fa-bars.fa-2x
+          a.navbar-brand(href='index-2.html')
+            img(src='/smartech/img/logo.png', alt='Smartech')
+            |  SMARTECH
+        // /.navbar-header
+        ul.nav.navbar-top-links.navbar-right
+          li.dropdown
+            a.dropdown-toggle(data-toggle='dropdown', href='#')
+              i.fa.fa-envelope.fa-fw
+              i.fa.fa-caret-down
+            ul.dropdown-menu.dropdown-messages
+              li
+                a(href='#')
+                  .media
+                    .pull-left
+                      img.media-object.img-circle(src='/smartech/img/profile-6.jpg', alt='Message Profile Picture')
+                    .media-body
+                      div
+                        strong John Smith
+                      .dropdown-messages-excerpt Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                      span.dropdown-small.pull-right.text-muted
+                        em 3 hours
+              li.divider
+              li
+                a(href='#')
+                  .media
+                    .pull-left
+                      img.media-object.img-circle(src='/smartech/img/profile-2.jpg', alt='Message Profile Picture')
+                    .media-body
+                      div
+                        strong John Smith
+                      .dropdown-messages-excerpt Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                      span.dropdown-small.pull-right.text-muted
+                        em Yesterday
+              li.divider
+              li
+                a(href='#')
+                  .media
+                    .pull-left
+                      img.media-object.img-circle(src='/smartech/img/profile-3.jpg', alt='Message Profile Picture')
+                    .media-body
+                      div
+                        strong John Smith
+                      .dropdown-messages-excerpt Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                      span.dropdown-small.pull-right.text-muted
+                        em Yesterday
+              li.divider
+              li
+                a.text-center.dropdown-button(href='inbox.html')
+                  | Read All Messages
+                  i.fa.fa-angle-right
+            // /.dropdown-messages
+          // /.dropdown
+          li.dropdown
+            a.dropdown-toggle(data-toggle='dropdown', href='#')
+              i.fa.fa-tasks.fa-fw
+              i.fa.fa-caret-down
+            ul.dropdown-menu.dropdown-tasks
+              li
+                a(href='#')
+                  div
+                    p
+                      strong Task 1
+                      span.dropdown-small.pull-right.text-muted 40% Complete
+                    .progress.progress-sm.progress-striped.active
+                      .progress-bar.progress-bar-danger(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width: 40%')
+                        span.sr-only 40% Complete (success)
+              li.divider
+              li
+                a(href='#')
+                  div
+                    p
+                      strong Task 2
+                      span.dropdown-small.pull-right.text-muted 20% Complete
+                    .progress.progress-sm.progress-striped.active
+                      .progress-bar.progress-bar-success(role='progressbar', aria-valuenow='20', aria-valuemin='0', aria-valuemax='100', style='width: 20%')
+                        span.sr-only 20% Complete
+              li.divider
+              li
+                a(href='#')
+                  div
+                    p
+                      strong Task 3
+                      span.dropdown-small.pull-right.text-muted 60% Complete
+                    .progress.progress-sm.progress-striped.active
+                      .progress-bar.progress-bar-warning(role='progressbar', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100', style='width: 60%')
+                        span.sr-only 60% Complete (warning)
+              li.divider
+              li
+                a(href='#')
+                  div
+                    p
+                      strong Task 4
+                      span.dropdown-small.pull-right.text-muted 80% Complete
+                    .progress.progress-sm.progress-striped.active
+                      .progress-bar.progress-bar-info(role='progressbar', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100', style='width: 80%')
+                        span.sr-only 80% Complete (danger)
+              li.divider
+              li
+                a.text-center.dropdown-button(href='#')
+                  | See All Tasks
+                  i.fa.fa-angle-right
+            // /.dropdown-tasks
+          // /.dropdown
+          li.dropdown
+            a.dropdown-toggle(data-toggle='dropdown', href='#')
+              i.fa.fa-bell.fa-fw
+              i.fa.fa-caret-down
+            ul.dropdown-menu.dropdown-alerts
+              li
+                a(href='#')
+                  div
+                    i.fa.fa-comment.fa-fw
+                    |  New Comment
+                    span.dropdown-small.pull-right.text-muted.small 4 minutes ago
+              li.divider
+              li
+                a(href='#')
+                  div
+                    i.fa.fa-twitter.fa-fw
+                    |  3 New Followers
+                    span.dropdown-small.pull-right.text-muted.small 12 minutes ago
+              li.divider
+              li
+                a(href='#')
+                  div
+                    i.fa.fa-envelope.fa-fw
+                    |  Message Sent
+                    span.dropdown-small.pull-right.text-muted.small 4 minutes ago
+              li.divider
+              li
+                a(href='#')
+                  div
+                    i.fa.fa-tasks.fa-fw
+                    |  New Task
+                    span.dropdown-small.pull-right.text-muted.small 4 minutes ago
+              li.divider
+              li
+                a(href='#')
+                  div
+                    i.fa.fa-upload.fa-fw
+                    |  Server Rebooted
+                    span.pull-right.text-muted.small 4 minutes ago
+              li.divider
+              li
+                a.text-center.dropdown-button(href='#')
+                  | See All Alerts
+                  i.fa.fa-angle-right
+            // /.dropdown-alerts
+          // /.dropdown
+          li.dropdown
+            a.dropdown-toggle(data-toggle='dropdown', href='#')
+              i.fa.fa-user.fa-fw
+              i.fa.fa-caret-down
+            ul.dropdown-menu.dropdown-user
+              li
+                a(href='#')
+                  i.fa.fa-user.fa-fw
+                  |  User Profile
+              li
+                a(href='#')
+                  i.fa.fa-gear.fa-fw
+                  |  Settings
+              li.divider
+              li
+                a.dropdown-button(href='/logout')
+                  i.fa.fa-sign-out.fa-fw
+                  |  Logout
+            // /.dropdown-user
+          // /.dropdown
+          li
+            a#toggle-right-sidebar(href='#')
+              i.fa.fa-ellipsis-v.fa-fw
+            // /.dropdown-user
+          // /.dropdown
+        // /.navbar-top-links
+        .sidebar-right
+          .sidebar-right-content
+            h5.sidebar-right-heading.sidebar-right-heading-first.text-uppercase.text-xs Contacts
+            ul.list-unstyled.margin-none
+              li.sidebar-contact-wrapper
+                a.sidebar-contact(href='#')
+                  img.img-circle.pull-right(src='/smartech/img/profile-6.jpg', height='20', width='20')
+                  i.fa.fa-circle.text-xs.text-primary
+                  |                                     Adam Brown
+              li.sidebar-contact-wrapper
+                a.sidebar-contact(href='#')
+                  img.img-circle.pull-right(src='/smartech/img/profile-3.jpg', height='20', width='20')
+                  i.fa.fa-circle.text-xs.text-primary
+                  |                                     Brian Summer
+              li.sidebar-contact-wrapper
+                a.sidebar-contact(href='#')
+                  img.img-circle.pull-right(src='/smartech/img/profile-2.jpg', height='20', width='20')
+                  i.fa.fa-circle.text-xs.text-primary
+                  |                                     Lisa White
+              li.sidebar-contact-wrapper
+                a.sidebar-contact(href='#')
+                  img.img-circle.pull-right(src='/smartech/img/profile-4.jpg', height='20', width='20')
+                  i.fa.fa-circle.text-xs.text-warning
+                  |                                     Jack Doe
+              li.sidebar-contact-wrapper
+                a.sidebar-contact(href='#')
+                  img.img-circle.pull-right(src='/smartech/img/profile-5.jpg', height='20', width='20')
+                  i.fa.fa-circle.text-xs.text-danger
+                  |                                     Danny Links
+              li.sidebar-contact-wrapper
+                a.sidebar-contact(href='#')
+                  img.img-circle.pull-right(src='/smartech/img/profile-7.jpg', height='20', width='20')
+                  i.fa.fa-circle.text-xs.text-muted
+                  |                                     Alice Cooper
+              li.sidebar-contact-wrapper
+                a.sidebar-contact(href='#')
+                  img.img-circle.pull-right(src='/smartech/img/profile-8.jpg', height='20', width='20')
+                  i.fa.fa-circle.text-xs.text-muted
+                  |                                     Alex Vance
+            h5.sidebar-right-heading.text-uppercase.text-xs Unfinished Tasks
+            ul.list-unstyled.margin-top
+              li
+                div
+                  p
+                    strong Task 1
+                    span.dropdown-small.pull-right.text-muted 40% Complete
+                  .progress.progress-xs.progress-striped.active
+                    .progress-bar.progress-bar-success(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width: 40%')
+                      span.sr-only 40% Complete (success)
+              li
+                div
+                  p
+                    strong Task 2
+                    span.dropdown-small.pull-right.text-muted 20% Complete
+                  .progress.progress-xs.progress-striped.active
+                    .progress-bar.progress-bar-info(role='progressbar', aria-valuenow='20', aria-valuemin='0', aria-valuemax='100', style='width: 20%')
+                      span.sr-only 20% Complete
+              li
+                div
+                  p
+                    strong Task 3
+                    span.dropdown-small.pull-right.text-muted 60% Complete
+                  .progress.progress-xs.progress-striped.active
+                    .progress-bar.progress-bar-warning(role='progressbar', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100', style='width: 60%')
+                      span.sr-only 60% Complete (warning)
+              li
+                div
+                  p
+                    strong Task 4
+                    span.dropdown-small.pull-right.text-muted 80% Complete
+                  .progress.progress-xs.progress-striped.active
+                    .progress-bar.progress-bar-danger(role='progressbar', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100', style='width: 80%')
+                      span.sr-only 80% Complete (danger)
+            h5.sidebar-right-heading.text-uppercase.text-xs Recent Activities
+            div
+              ul.list-unstyled
+                li.sidebar-notification
+                  a(href='#')
+                    i.fa.fa-comment.fa-fw
+                    |  New Comment
+                li.sidebar-notification
+                  a(href='#')
+                    i.fa.fa-twitter.fa-fw
+                    |  3 New Followers
+                li.sidebar-notification
+                  a(href='#')
+                    i.fa.fa-envelope.fa-fw
+                    |  Message Sent
+                li.sidebar-notification
+                  a(href='#')
+                    i.fa.fa-tasks.fa-fw
+                    |  New Task
+                li.sidebar-notification
+                  a(href='#')
+                    i.fa.fa-upload.fa-fw
+                    |  Server Rebooted
+                li.sidebar-notification
+                  a(href='#')
+                    i.fa.fa-warning.fa-fw
+                    |  Server Not Responding
+                li.sidebar-notification
+                  a(href='#')
+                    i.fa.fa-shopping-cart.fa-fw
+                    |  New Order Placed
+                li.sidebar-notification
+                  a(href='#')
+                    i.fa.fa-money.fa-fw
+                    |  Payment Received
+        include slidebar
+      #page-wrapper
+        block content    
+    // jQuery Version 1.11.0
+    script(src='/smartech/js/jquery-1.11.0.js')
+    // Bootstrap Core JavaScript
+    script(src='/smartech/js/bootstrap.min.js')
+    // Metis Menu Plugin JavaScript
+    script(src='/smartech/js/plugins/metisMenu/metisMenu.min.js')
+    // Morris Charts JavaScript
+    script(src='/smartech/js/plugins/morris/raphael.min.js')
+    script(src='/smartech/js/plugins/morris/morris.min.js')
+    script(src='/smartech/js/demo/dashboard.js')
+    // Masonry JavaScript
+    script(src='/smartech/js/plugins/masonry/masonry.js')
+    // Sparkline JavaScript
+    script(src='/smartech/js/plugins/sparkline/sparkline.js')
+    // Custom Theme JavaScript
+    script(src='/smartech/js/smartech.js')
+    script(src='/smartech/js/demo/index.js')
+    // Mirrored from grozav.com/themes/smartech/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 10 May 2016 04:32:48 GMT
