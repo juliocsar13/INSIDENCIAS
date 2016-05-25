@@ -1,15 +1,17 @@
 var express = require('express');
 var router = express.Router();
 var users = require('./users')
+//var costumer = require('./costumer')
 
 var middleware  = require('../controllers/middleware')
 /* GET home page. */
 
 router.get('/',middleware.checkLogin,function(req,res){
-    res.render('index',{title:'SERV-TI'})
+    return res.render('index_staff',{title:'SERV-TI'})
 })
 
 router.use('/usuarios',middleware.checkLogin,users);
+//router.use('/cliente',middleware.checkLogin,costumer);
 
 router.route('/login')
     .get(function(req,res){
@@ -22,7 +24,6 @@ router.route('/login')
         }else{
             res.send('FAIL IN LOGGER')
         }
-
     })
 
 router.get('/logout',function(req,res){

@@ -1,148 +1,43 @@
-.navbar-default.sidebar(role='navigation')
-  .sidebar-nav.navbar-collapse
-    ul#side-menu.nav
-      li.sidebar-profile.text-center
-        span.sidebar-profile-picture
-          span.sidebar-profile-status
-          img(src='/smartech/img/profile.jpg', alt='Profile Picture')
-        h3.sidebar-profile-name JOHN DOE
-        p.sidebar-profile-description
-          | I am a self-taught, multidisciplinary artist
-          | with a focus on web design and development.
-        span.sidebar-profile-location.text-primary
-          i.fa.fa-map-marker
-          |  London, UK
-      li.sidebar-search
-        a.sidebar-search-collapse(href='javascript:void(0);')
-          span.sidebar-item-icon.fa-stack
-            i.fa.fa-square.fa-stack-2x.text-primary
-            i.fa.fa-search.fa-stack-1x.fa-inverse
-          span.sidebar-item-title Dashboard
-          span.sidebar-item-subtitle Application overview
-        button.btn.btn-primary.btn-xs.sidebar-search-button(type='button')
-          i.fa.fa-search
-        input.form-control(type='text', placeholder='Search here...')
-        // /input-group
+li.user-panel
+  .thumb
+    img.img-circle(src='/s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg', alt='')
+  .info
+    p John Doe
+    ul.list-inline.list-unstyled
       li
-        a.active(href='index-2.html')
-          span.sidebar-item-icon.fa-stack
-            i.fa.fa-square.fa-stack-2x.text-primary
-            i.fa.fa-dashboard.fa-stack-1x.fa-inverse
-          span.sidebar-item-title Dashboard
-          span.sidebar-item-subtitle Application overview
+        a(href='extra-profile.html', data-hover='tooltip', title='Profile')
+          i.fa.fa-user
       li
-        a(href='#')
-          span.sidebar-item-icon.fa-stack
-            i.fa.fa-square.fa-stack-2x.text-primary
-            i.fa.fa-wrench.fa-stack-1x.fa-inverse
-          span.sidebar-item-arrow.fa.arrow
-          span.sidebar-item-title UI Elements
-          span.sidebar-item-subtitle Bootstrap and UI features
-        ul.nav.nav-second-level
-          li
-            a(href='panels-wells.html') Panels and Wells
-          li
-            a(href='buttons.html') Buttons
-          li
-            a(href='notifications.html') Notifications
-          li
-            a(href='typography.html') Typography
-          li
-            a(href='grid.html') Grid
-        // /.nav-second-level
+        a(href='email-inbox.html', data-hover='tooltip', title='Mail')
+          i.fa.fa-envelope
       li
-        a(href='#')
-          span.sidebar-item-icon.fa-stack
-            i.fa.fa-square.fa-stack-2x.text-primary
-            i.fa.fa-envelope.fa-stack-1x.fa-inverse
-          span.sidebar-item-arrow.fa.arrow
-          span.sidebar-item-title Messages
-          span.sidebar-item-subtitle Email and Chat
-        ul.nav.nav-second-level
-          li
-            a(href='inbox.html') Inbox
-          li
-            a(href='compose.html') Compose
-          li
-            a(href='chat.html') Chat
-          li
-            a(href='inbox-single.html') View Message
-        // /.nav-second-level
+        a(href='#', data-hover='tooltip', title='Setting', data-toggle='modal', data-target='#modal-config')
+          i.fa.fa-cog
       li
-        a(href='#')
-          span.sidebar-item-icon.fa-stack
-            i.fa.fa-square.fa-stack-2x.text-primary
-            i.fa.fa-bar-chart-o.fa-stack-1x.fa-inverse
-          span.sidebar-item-arrow.fa.arrow
-          span.sidebar-item-title Charts
-          span.sidebar-item-subtitle Statistics and reports
-        ul.nav.nav-second-level
-          li
-            a(href='flot.html') Flot Charts
-          li
-            a(href='morris.html') Morris.js Charts
-        // /.nav-second-level
-      li
-        a(href='tables.html')
-          span.sidebar-item-icon.fa-stack
-            i.fa.fa-square.fa-stack-2x.text-primary
-            i.fa.fa-table.fa-stack-1x.fa-inverse
-          span.sidebar-item-title Tables
-          span.sidebar-item-subtitle Dynamic data tables
-      li
-        a(href='forms.html')
-          span.sidebar-item-icon.fa-stack
-            i.fa.fa-square.fa-stack-2x.text-primary
-            i.fa.fa-edit.fa-stack-1x.fa-inverse
-          span.sidebar-item-title Forms
-          span.sidebar-item-subtitle User input forms
-      li
-        a(href='#')
-          span.sidebar-item-icon.fa-stack
-            i.fa.fa-square.fa-stack-2x.text-primary
-            i.fa.fa-sitemap.fa-stack-1x.fa-inverse
-          span.sidebar-item-arrow.fa.arrow
-          span.sidebar-item-title Dropdown
-          span.sidebar-item-subtitle Lorem ipsum dolor sit
-        ul.nav.nav-second-level
-          li
-            a(href='#') Second Level Item
-          li
-            a(href='#') Second Level Item
-          li
-            a(href='#')
-              | Third Level 
-              span.fa.arrow
-            ul.nav.nav-third-level
-              li
-                a(href='#') Third Level Item
-              li
-                a(href='#') Third Level Item
-              li
-                a(href='#') Third Level Item
-              li
-                a(href='#') Third Level Item
-            // /.nav-third-level
-        // /.nav-second-level
-      li
-        a(href='#')
-          span.sidebar-item-icon.fa-stack
-            i.fa.fa-square.fa-stack-2x.text-primary
-            i.fa.fa-file-text-o.fa-stack-1x.fa-inverse
-          span.sidebar-item-arrow.fa.arrow
-          span.sidebar-item-title Sample Pages
-          span.sidebar-item-subtitle Useful standard pages
-        ul.nav.nav-second-level
-          li
-            a(href='blank.html') Blank Page
-          li
-            a(href='login.html') Login Page
-          li
-            a(href='timeline.html') Timeline
-          li
-            a(href='fullcalendar.html') Calendar
-          li
-            a(href='wysiwyg.html') WYSIWYG
-        // /.nav-second-level
-  // /.sidebar-collapse
-// /.navbar-static-side
+        a(href='extra-signin.html', data-hover='tooltip', title='Logout')
+          i.fa.fa-sign-out
+  .clearfix
+li.active
+  a(href='')
+    i.fa.fa-tachometer.fa-fw
+      .icon-bg.bg-orange
+    span.menu-title INCIDENCIAS
+li
+  a(href='')
+    i.fa.fa-bullhorn.fa-fw
+      .icon-bg.bg-orange
+    span.menu-title USUARIOS
+    span.label.label-violet v4.0
+li
+  a(href='')
+    i.fa.fa-laptop.fa-fw
+      .icon-bg.bg-pink
+    span.menu-title CLIENTES
+    span.fa.arrow
+    span.label.label-yellow v3.0
+li
+  a(href='')
+    i.fa.fa-desktop.fa-fw
+      .icon-bg.bg-pink
+    span.menu-title OTROS
+    span.fa.arrow
