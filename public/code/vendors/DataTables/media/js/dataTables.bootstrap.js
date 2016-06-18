@@ -2,18 +2,28 @@
 var search_html;
 search_html = '<div class="input-group input-group-sm mbs">';
 search_html += "_INPUT_";
-search_html += '<span class="input-group-btn"><button type="button" data-toggle="dropdown" class="btn btn-success dropdown-toggle">Search</button></span></div>';
+search_html += '<span class="input-group-btn"><button type="button" data-toggle="dropdown" class="btn btn-success dropdown-toggle">Buscar</button></span></div>';
 $.extend( true, $.fn.dataTable.defaults, {
+	"sDom":
+		"<'row'<'col-md-6'l><'col-md-6'f>>"+
+		"t"+
+		"<'row'<'col-md-6'l><'col-md-6'p>r>",
+	"oLanguage": {
+		"sLengthMenu": "ver _MENU_ registros",
+		"sSearch": search_html
+	}
+} );
+/*$.extend( true, $.fn.dataTable.defaults, {
 	"sDom":
 		"<'row'<'col-md-5'l><'col-md-4'T><'col-md-3'f>>"+
 		"t"+
 		"<'row'<'col-md-6'l><'col-md-6'p>r>",
 	"oLanguage": {
-		"sLengthMenu": "View _MENU_ records | Found total 100 records",
+		"sLengthMenu": "ver _MENU_ registros",
 		"sSearch": search_html
 	}
 } );
-
+*/
 
 /* Default class modification */
 $.extend( $.fn.dataTableExt.oStdClasses, {

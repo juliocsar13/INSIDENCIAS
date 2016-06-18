@@ -1,25 +1,32 @@
 "use strict"
 var models = require('../models')
 
-module.exports.createUser = function (req,res){
-	models.User.create({
-		id:req.body.id,
-		username :req.body.username
+module.exports.createPerson = function (req,res){
+	models.Person.create({
 
-	}).then(function(){
+        id:req.body.id,
+		dni:req.body.dni,
+		name :req.body.nombre,
+        lastname:req.body.lastname,
+		email:req.body.email,
+		phone:req.body.phone,
+		role:req.body.role,
+		dependence:req.body.dependence,
+		register_date_person:req.body.register_date_person,
+        personAdmin:req.body.personAdmin
+
+	}).then(function(users){
 		res.redirect('/usuarios');
 	})
 	.catch(function(err){
-		res.status(503).send(err.username+" "+err.message);
+		res.status(503).send(err.name+" "+err.message);
 	})
 }
-
-module.exports.renderCreateUser = function (req,res){
-	res.render('users/create');
+module.exports.renderPerson = function (req,res){
+	res.render('users/index');
 }
-
-module.exports.getAllUsers = function (req,res){
-	models.User.findAll().then(function(users){
+module.exports.getAllPerson = function (req,res){
+	models.Person.findAll().then(function(users){
 		res.render('users/index',{users:users});
 	});
 }

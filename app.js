@@ -8,6 +8,9 @@ var session         = require('express-session');
 
 var index           = require('./routes/index');
 
+var jwt             = require('jsonwebtoken');
+var config          = require('./config/config')
+
 var app             = express();
 
 // view engine setup
@@ -15,6 +18,7 @@ var app             = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+//app.set('superSecret',config.secret);
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -25,12 +29,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use(express.session());
 
 app.use(session({
-    secret: 'keyboard cat',
+    secret: 'ilovescotchyscotch',
     resave: true,
     saveUninitialized: false
 }))
 
-
+//app.set('superSecret',config.secret);
 // catch 404 and forward to error handler
 
 app.use('/',index)

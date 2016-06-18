@@ -18,26 +18,24 @@ li.user-panel
           i.fa.fa-sign-out
   .clearfix
 li.active
-  a(href='')
-    i.fa.fa-tachometer.fa-fw
+  a(href='/')
+    i.fa.fa-wheelchair.fa-fw
       .icon-bg.bg-orange
     span.menu-title INCIDENCIAS
 li
-  a(href='')
-    i.fa.fa-bullhorn.fa-fw
+  a(href='/usuarios')
+    i.fa.fa-user.fa-fw
       .icon-bg.bg-orange
     span.menu-title USUARIOS
-    span.label.label-violet v4.0
-li
-  a(href='')
-    i.fa.fa-laptop.fa-fw
-      .icon-bg.bg-pink
-    span.menu-title CLIENTES
-    span.fa.arrow
-    span.label.label-yellow v3.0
-li
-  a(href='')
-    i.fa.fa-desktop.fa-fw
-      .icon-bg.bg-pink
-    span.menu-title OTROS
-    span.fa.arrow
+
+//-
+    li
+      a(href='/cliente')
+        i.fa.fa-group.fa-fw
+          .icon-bg.bg-pink
+        span.menu-title CLIENTES
+    li
+      a(href='#')
+        i.fa.fa-wrench.fa-fw
+          .icon-bg.bg-pink
+        span.menu-title TECNICOS

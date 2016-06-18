@@ -1,9 +1,37 @@
 extends ../layout
-
+block modals
+    include create
 block content
-	h2 Todos los usuarios
-	ul
-		each user in users
-			li
-				=user.username
-				
+    .panel
+        .panel-header
+        .panel-body
+            .form-body.pal
+                .row
+                    .col-md-12
+                        button.btn.btn-success(data-target='#registerUserModal',data-toggle='modal')
+                            i.fa.fa-plus 
+                            |  Nuevo
+                        .table-responsive
+                            hr
+                            table#table_id.table.table-hover.table-striped.table-bordered.table-advanced.tablesorter.display.dataTable.no-footer
+                                thead
+                                    th #
+                                    th Nombre
+                                    th Apellido
+                                    th DNI
+                                    th rol
+                                    th Telefono 
+                                    th Email
+                                    th turno
+                                tbody
+                                    each user in users
+                                        tr
+                                            td=user.id
+                                            td=user.name
+                                            td=user.lastname
+                                            td=user.dni
+                                            td=user.role
+                                            td=user.phone
+                                            td=user.email
+                                            td=user.turno
+                                            

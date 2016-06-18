@@ -1,33 +1,51 @@
-var express = require('express');
-var router = express.Router();
-var users = require('./users')
-//var costumer = require('./costumer')
+'use strict'
 
-var middleware  = require('../controllers/middleware')
-/* GET home page. */
+var express         = require('express');
+var router          = express.Router();
+var jwt             = require('jsonwebtoken')
+var users           = require('./users')
+var incidencias     = require('./incidencias')
 
-router.get('/',middleware.checkLogin,function(req,res){
-    return res.render('index_staff',{title:'SERV-TI'})
+var middleware      = require('../controllers/middleware')
+var models = require('../models')
+
+router.get('/',function(req,res){
+    return res.render('index_staff',{title:'OSIS'})
 })
 
-router.use('/usuarios',middleware.checkLogin,users);
-//router.use('/cliente',middleware.checkLogin,costumer);
+router.use('/usuarios',users);
+router.use('/incidencia',incidencias)
 
 router.route('/login')
     .get(function(req,res){
-        res.render('login/index',{title:'LOGIN'})
+        res.render('login/index',{title:'OSIS'})
     })
+
     .post(function(req,res){
-        if(req.body.username == 'julio' && req.body.password == '123456'){
-            req.session.user = req.body.username;
+        if(req.body.dni=='48037217' && req.body.password=='123456'){
+            req.session.user = req.body.dni;
             res.redirect('/')
-        }else{
-            res.send('FAIL IN LOGGER')
         }
+        /*var credentiales = {
+            dni:req.body.dni,
+            password: req.body.password
+        }
+        models.User.findOne(credentiales,function(err,user,count){
+            if(err){return res.status(500)}
+            if(!user){return res.status(404)}
+
+            var token = jwt = sign(user,superSecret);
+            return res.status.json(token);
+        })
+        req.session.token = req.body.token;
+        console.log('TOKEN BODY',req.body.token)
+        */
     })
 
 router.get('/logout',function(req,res){
-    req.session.user = null;
+    req.session.dni = null;
     res.redirect('/login')
 })
+
+
 module.exports = router;

@@ -1,4 +1,37 @@
 extends layout
-
+block modals
+    include create
 block content
     .page-content
+        .panel
+            .panel-body
+                .form-body.pal
+                    .row
+                        .col-md-12
+                            button.btn.btn-success(type='button',href='#registerIncidenciaModal',data-toggle='modal')
+                                i.fa.fa-plus 
+                                |  Nuevo
+                            .table-responsive
+                                hr
+                                table.table.table-hover.table-striped.table-bordered.table-advanced.tablesorter.display.dataTable.no-footer
+                                    thead
+                                        th #
+                                        th Titulo
+                                        th dependencia
+                                        th usuario
+                                        th cliente
+                                        th tecnico 
+                                        th solicion
+                                        th descripcion
+                                        th observaciones
+                                    tbody
+                                            tr
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td
+                                                td

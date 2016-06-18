@@ -1,0 +1,61 @@
+.modal.fade#registerIncidenciaModal(role="dialog")
+    .modal-dialog.modal-wide-width
+        .modal-content
+            .modal-header
+                button.close(type='button',data-dismiss='modal') x
+                h3.modal-title Registrar incidencia
+            .modal-body
+                form(method='post',action='/incidencias')
+                    .row
+                        .col-md-6
+                            .form-group
+                                label.control-label() Titulo
+                                input.form-control()
+                        .col-md-6
+                            .form-group
+                                label.control-label() Prioridad
+                                input.form-control(type='')
+                        .col-md-6
+                            .form-group
+                                label.control-label() Medio de notificacion
+                                select.form-control()
+                                    option(value='telefono') Telefono
+                                    option(value='documento') Documento
+                        .col-md-6    
+                            .form-group
+                                label.control-label() Usuario
+                                select.form-control()
+                        .col-md-6    
+                            .form-group
+                                label.control-label() Dependencia
+                                select.form-control()
+                        .col-md-6    
+                            .form-group
+                                label.control-label() Tecnico
+                                select.form-control()
+                        .col-md-6
+                            .form-group
+                                label.control-label() Fecha de registro
+                                input.form-control()
+                        .col-md-6    
+                            .form-group
+                                label.control-label() Estado
+                                select.form-control()
+                                    option(value='Atendido') Atendido
+                                    option(value='Pendiente') Pendiente        
+                        .col-md-6
+                            .form-group
+                                label.control-label() Descripcion
+                                textarea.form-control(rows='')
+                        .col-md-6    
+                            .form-group
+                                label.control-label() Observaciones
+                                textarea.form-control(rows='')
+                                  
+                        .col-md-12
+                            button.btn.btn-success.pull-right(type='submit') Registrar
+                            button.btn.btn-default.pull-right(type='button',data-dismiss='modal') Cancelar
+        //-
+            .modal-footer
+                button.btn.btn-default(type='button',data-dismiss='modal') Cancelar
+                button.btn.btn-success(type='submit') Registrar

@@ -6,8 +6,7 @@ var userController = require('../controllers/userController')
 /* GET users listing. */
 
 router.route('/')
-    .get(userController.renderCreateUser)
-    .post(userController.createUser);
-
+    .get(userController.getAllPerson)
+    .post(userController.createPerson);
 
 module.exports = router;

@@ -1,32 +1,60 @@
-extends ../layout
-
-block content
-    .row
-        .col-lg-2
-            a.btn.btn-default#a_click( href='#',type='button') ALERTA
-
-
-        .col-lg-5
-            #capa Esta es la capa independiente
-        .col-lg-5
-            #mielemento CONTENIDO DE ELEMENTO
-        .col-lg-12
-            form
-              | Nombre: 
-              input(type='text', name='nombre')
-              br
-              input#mayoria_edad(type='checkbox', name='mayor_edad', value='1')
-              |  Soy mayor de edad
-              br
-              #formulariomayores(style='display: none')
-                | Dato para mayores de edad: 
-                input(type='text', name='mayores_edad')
-//- 
-        .col-md-6
-            h5 Crear un nuevo Usuario
-            form(action="/users/new", method="post")
-                input.form-control(type="text", name="username")
-                input.form-control(type="submit")
-        .col-md-6
-            h5 Actualizar Fecha
-            input#date_time.form-control(type="date")
+.modal.fade#registerUserModal(role="dialog")
+    .modal-dialog.modal-wide-width
+        .modal-content
+            .modal-header
+                button.close(type='button',data-dismiss='modal') x
+                h3.modal-title Registrar Usuario
+            .modal-body
+                form(method='post',action='/usuarios')
+                    .row
+                        .col-md-6
+                            .form-group
+                                label.control-label() DNI
+                                input.form-control(type='text',name='dni',id='dni')
+                        .col-md-6
+                            .form-group
+                                label.control-label() Contraseña
+                                input.form-control(type='password',name='password',id='password')
+                        .col-md-6
+                            .form-group
+                                label.control-label() Nombre
+                                input.form-control(type='text',name='name',id='name')
+                        .col-md-6
+                            .form-group
+                                label.control-label() Apellido
+                                input.form-control(type='text',name='lastname',id='lastname')
+                        .col-md-6
+                            .form-group
+                                label.control-label() Email
+                                input.form-control(type='text',name='email',id='email')
+                        
+                        .col-md-6    
+                            .form-group
+                                label.control-label() Rol
+                                select.form-control(type='text',name='role',id='role')
+                                    option(value='usuario') Usuario
+                        .col-md-6    
+                            .form-group
+                                label.control-label() Telefono
+                                input.form-control(type='text',name='phone',id='phone')
+                        .col-md-6
+                            .form-group
+                                label.control-label() Dependecia 
+                                input.form-control()
+                        .col-md-6
+                            .form-group
+                                label.control-label() Usuario 
+                                input.form-control()
+                        .col-md-6    
+                            .form-group
+                                label.control-label() Turno
+                                select.form-control(type='text',name='turno',id='turno')
+                                    option(value='mañana') Mañana
+                                    option(value='tarde') Tarde  
+                        .col-md-12
+                            button.btn.btn-success.pull-right(type='submit') Registrar
+                            button.btn.btn-default.pull-right(type='button',data-dismiss='modal') Cancelar
+        //-
+            .modal-footer
+                button.btn.btn-default(type='button',data-dismiss='modal') Cancelar
+                button.btn.btn-success(type='submit') Registrar

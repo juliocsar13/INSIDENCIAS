@@ -1,25 +1,19 @@
+var jwt = require('jsonwebtoken');
+
 module.exports.checkLogin = function(req,res,next){
 
-    if(req.session.user){
+    //if (!req.session.token) return res.redirect('/');
+    var superSecret = "ilovescotchyscotch";
 
-        //var staff = ["ADMINISTRADOR"];
-        //var role.user.role;
-        //var rolegroup = staff.indexOf(role) != -1 ? "staff":"customer";
-
-        //res.locals.role = role;
-        //res.locals.rolegroup = rolegroup;
+    jwt.verify(req.session.token,superSecret,function(err,decoded){
+        if(err) return res.redirect('/');
         next();
-
-    }else{
+    })
+}
+module.exports.checkLogin1 = function(req,res,next){
+    if(!req.session.user){
         res.redirect('/login');
+    }else{
+        res.render('/');
     }
 }
-/*
-if(req.session.user){
-    next();
-}else{
-    res.redirect('/login')
-}
-
-
-*/
