@@ -3,7 +3,11 @@ module.exports = function(sequelize,DataType){
 
 	var Person = sequelize.define("Person",{
 
-        dni:DataType.STRING,
+        dni:{
+                type:DataType.STRING,
+                unique:true
+        },
+		password:DataType.STRING,
 		name:DataType.STRING,
         lastname:DataType.STRING,
         email:DataType.STRING,
@@ -11,7 +15,7 @@ module.exports = function(sequelize,DataType){
         role:DataType.STRING,
         register_date_person:DataType.STRING,
 		dependence:DataType.STRING,
-		personAdmin:DataType.STRING
+		recorder:DataType.STRING
 
 	},{
 		classMethods:{

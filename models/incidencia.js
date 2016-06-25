@@ -2,17 +2,18 @@
 
 module.exports = function(sequelize,DataType){
 	var Incidencia = sequelize.define("Incidencia",{
-		
+
 		title:DataType.STRING,
         description:DataType.STRING,
 		priority:DataType.STRING,
 		state:DataType.STRING,
-		registration_date:DataType.DATE,
-		observation:DataType.STRING,
-		comnentTechnical:DataType.STRING,
-		state:DataType.STRING,
-		notification_means:DataType.STRING,
-		dependence:DataType.STRING
+		registration_date:DataType.STRING,
+		comment:DataType.STRING,
+		notificacionMeans:DataType.STRING,
+		userRegister:DataType.STRING,
+		dependence:DataType.STRING,
+		technical:DataType.STRING
+
 
 	},{
 		classMethods:{

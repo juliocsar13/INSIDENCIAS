@@ -1,0 +1,45 @@
+extends ../layout
+block modals
+    include create
+    include ../users/create
+block content
+    .page-content
+        .panel
+            .panel-body
+                .form-body.pal
+                    .row
+                        .col-md-12
+                            button.btn.btn-success(type='button',href='#registerIncidenciaModal',data-toggle='modal')
+                                i.fa.fa-plus 
+                                |  Nuevo
+                            .table-responsive
+                                hr
+                                table#table_id.table.table-hover.table-striped.table-bordered.table-advanced.tablesorter.display.dataTable.no-footer
+                                    thead
+                                        th #
+                                        th Titulo
+                                        th Descripcion
+                                        //th Prioridad
+                                        th Estado
+                                        th Fecha de Registro
+                                        th Comentario
+                                        th Medio Notificacion
+                                        th Usuario
+                                        th Dependencia
+                                        th Tecnico
+                                    tbody
+                                        each incidencia in incidencias
+                                            tr
+                                                td=incidencia.id
+                                                td=incidencia.title
+                                                td=incidencia.description
+                                                //td=incidencia.priority
+                                                td=incidencia.state
+                                                td=incidencia.registration_date
+                                                td=incidencia.comment
+                                                td=incidencia.notificacionMeans
+                                                td=incidencia.userRegister
+                                                td=incidencia.dependence
+                                                td=incidencia.technical
+block scripts
+    script(src='/javascripts/users.js')

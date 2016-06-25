@@ -1,28 +1,18 @@
 $(function(){
-    if(localStorage.getItem('token'))
-    $('#login-btn').click(login);
 
-    function login(e){
-        e.preventDefault();
-        var formData = {
-          'dni': $('input[name=dni]').val(),
-          'password': $('input[name=password]').val()
-        };
-        console.log('AJAX RESULT',formData)
+    $(document).on('show.bs.modal', '.modal', function () {
+        var zIndex = 1040 + (10 * $('.modal:visible').length);
+        $(this).css('z-index', zIndex);
+        setTimeout(function() {
+            $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
+        }, 0);
+    })
 
-        $.ajax({
-        type: "POST",
-        url: 'http://localhost:3002/login',
-        data: formData,
-        async: false,
-        success: function (result) {
-            console.log('AJAX RESULT',formData)
-            $('input[name=token]').val(result.token); // para enviar el token al login dela webapp
-            $('#login-form').submit();
-            localStorage.setItem('token', result.token);
-            localStorage.setItem('dni', result.dni);
-        },
-        dataType: 'json'
-        });
+
+    $("#btn-login").click(login)
+        function login(e){
+            e.preventDefault();
+            var dni = $('#dniLg').val()
+            localStorage.setItem('dniLg',dni);
     }
-})
+});

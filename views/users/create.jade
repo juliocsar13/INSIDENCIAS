@@ -11,6 +11,7 @@
                             .form-group
                                 label.control-label() DNI
                                 input.form-control(type='text',name='dni',id='dni')
+                                
                         .col-md-6
                             .form-group
                                 label.control-label() Contraseña
@@ -33,26 +34,28 @@
                                 label.control-label() Rol
                                 select.form-control(type='text',name='role',id='role')
                                     option(value='usuario') Usuario
+                                    option(value='cliente') Cliente
+                                    option(value='tecnico') Tecnico
                         .col-md-6    
                             .form-group
                                 label.control-label() Telefono
                                 input.form-control(type='text',name='phone',id='phone')
                         .col-md-6
                             .form-group
-                                label.control-label() Dependecia 
-                                input.form-control()
+                                label.control-label() Dependecia
+                                input.form-control(name='dependence')
+                                             
                         .col-md-6
                             .form-group
-                                label.control-label() Usuario 
-                                input.form-control()
-                        .col-md-6    
+                                label.control-label() Registrador 
+                                input#recorderUser.form-control(name='recorder')
+                
+                        .col-md-3
                             .form-group
-                                label.control-label() Turno
-                                select.form-control(type='text',name='turno',id='turno')
-                                    option(value='mañana') Mañana
-                                    option(value='tarde') Tarde  
+                                label.control-label() Fecha registro
+                                input#dateIncidencia.form-control(name='register_date_person', readonly="readonly") 
                         .col-md-12
-                            button.btn.btn-success.pull-right(type='submit') Registrar
+                            button.btn.btn-success.pull-right(type='submit',style='margin-left:5px') Registrar
                             button.btn.btn-default.pull-right(type='button',data-dismiss='modal') Cancelar
         //-
             .modal-footer

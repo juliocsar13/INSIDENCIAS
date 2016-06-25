@@ -10,11 +10,13 @@ var middleware      = require('../controllers/middleware')
 var models = require('../models')
 
 router.get('/',function(req,res){
-    return res.render('index_staff',{title:'OSIS'})
+
+    return res.render('index',{title:'OSIS'})
+
 })
 
 router.use('/usuarios',users);
-router.use('/incidencia',incidencias)
+router.use('/incidencias',incidencias)
 
 router.route('/login')
     .get(function(req,res){
@@ -22,24 +24,19 @@ router.route('/login')
     })
 
     .post(function(req,res){
-        if(req.body.dni=='48037217' && req.body.password=='123456'){
-            req.session.user = req.body.dni;
-            res.redirect('/')
-        }
-        /*var credentiales = {
-            dni:req.body.dni,
-            password: req.body.password
-        }
-        models.User.findOne(credentiales,function(err,user,count){
-            if(err){return res.status(500)}
-            if(!user){return res.status(404)}
-
-            var token = jwt = sign(user,superSecret);
-            return res.status.json(token);
+        models.Person.findAndCountAll({
+                where:{
+                    dni:req.body.dni,
+                    password:req.body.password
+                }
+            }
+        ).then(function(user){
+            console.log('DEVUELVE UN OBJETO : ',user)
+            if(user.count!=0){
+                req.session.user= req.body.dni;
+                res.redirect('/')
+            }
         })
-        req.session.token = req.body.token;
-        console.log('TOKEN BODY',req.body.token)
-        */
     })
 
 router.get('/logout',function(req,res){
@@ -49,3 +46,20 @@ router.get('/logout',function(req,res){
 
 
 module.exports = router;
+
+
+
+/*var credentiales = {
+    dni:req.body.dni,
+    password: req.body.password
+}
+models.User.findOne(credentiales,function(err,user,count){
+    if(err){return res.status(500)}
+    if(!user){return res.status(404)}
+
+    var token = jwt = sign(user,superSecret);
+    return res.status.json(token);
+})
+req.session.token = req.body.token;
+console.log('TOKEN BODY',req.body.token)
+*/

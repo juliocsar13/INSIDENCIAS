@@ -30,15 +30,14 @@ html(lang='en')
     link(type='text/css', rel='stylesheet', href='/code/vendors/DataTables/extensions/TableTools/css/dataTables.tableTools.min.css')
     link(type='text/css', rel='stylesheet', href='/code/vendors/DataTables/media/css/dataTables.bootstrap.css')
     // Loading style vendors
+    link(type='text/css', rel='stylesheet', href='/code/vendors/select2/select2-madmin.css')
+    link(type='text/css', rel='stylesheet', href='/code/vendors/bootstrap-select/bootstrap-select.min.css')
+    link(type='text/css', rel='stylesheet', href='/code/vendors/multi-select/css/multi-select-madmin.css')
     
     link.default-style(type='text/css', rel='stylesheet', href='/code/css/themes/style1/orange-blue.css')
     link#theme-change.style-change.color-change(type='text/css', rel='stylesheet', href='/code/css/themes/style1/orange-blue.css')
     link(type='text/css', rel='stylesheet', href='/code/css/style-responsive.css')
     link(type='text/css', rel='stylesheet', href='/stylesheets/style.css')
-    link(type='text/css', rel='stylesheet', href='/code/vendors/intro.js/introjs.css')
-    link(type='text/css', rel='stylesheet', href='/code/vendors/calendar/zabuto_calendar.min.css')
-    link(type='text/css', rel='stylesheet', href='/code/vendors/sco.message/sco.message.css')
-    link(type='text/css', rel='stylesheet', href='/code/vendors/intro.js/introjs.css')
     
   body.sidebar-icons.header-static
     block modals    
@@ -75,7 +74,7 @@ html(lang='en')
               li.dropdown.topbar-user
                 a.dropdown-toggle(data-hover='dropdown', href='#')
                   img.img-responsive.img-circle(src='/s3.amazonaws.com/uifaces/faces/twitter/kolage/48.jpg', alt='')
-                  span.hidden-xs Julio Pari
+                  span.hidden-xs 
                   span.caret
                 ul.dropdown-menu.dropdown-user.pull-right
                   li
@@ -134,7 +133,14 @@ html(lang='en')
     script(src='/javascripts/main.js')
 
 
-    script(src='/code/vendors/DataTables/media/js/jquery.dataTables.js')
-    script(src='/code/vendors/DataTables/media/js/dataTables.bootstrap.js')
-    script(src='/code/vendors/DataTables/extensions/TableTools/js/dataTables.tableTools.min.js')
-    script(src='/code/js/table-datatables.js')
+    script(src='/code/vendors/select2/select2.min.js')
+    script(src='/code/vendors/bootstrap-select/bootstrap-select.min.js')
+    script(src='/code/vendors/multi-select/js/jquery.multi-select.js')
+    script(src='/code/js/ui-dropdown-select.js')
+    
+    
+    //*script(src='/code/vendors/DataTables/media/js/jquery.dataTables.js')
+    //script(src='/code/vendors/DataTables/media/js/dataTables.bootstrap.js')
+    //script(src='/code/vendors/DataTables/extensions/TableTools/js/dataTables.tableTools.min.js')
+    //script(src='/code/js/table-datatables.js')*/
+    block scripts

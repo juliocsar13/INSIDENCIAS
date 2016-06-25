@@ -6,14 +6,15 @@ module.exports.createPerson = function (req,res){
 
         id:req.body.id,
 		dni:req.body.dni,
-		name :req.body.nombre,
+		password:req.body.password,
+		name :req.body.name,
         lastname:req.body.lastname,
 		email:req.body.email,
 		phone:req.body.phone,
 		role:req.body.role,
 		dependence:req.body.dependence,
 		register_date_person:req.body.register_date_person,
-        personAdmin:req.body.personAdmin
+        recorder:req.body.recorder
 
 	}).then(function(users){
 		res.redirect('/usuarios');

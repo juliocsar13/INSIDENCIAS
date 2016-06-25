@@ -8,5 +8,5 @@ var userController = require('../controllers/userController')
 router.route('/')
     .get(userController.getAllPerson)
     .post(userController.createPerson);
-
+    
 module.exports = router;

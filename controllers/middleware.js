@@ -11,9 +11,9 @@ module.exports.checkLogin = function(req,res,next){
     })
 }
 module.exports.checkLogin1 = function(req,res,next){
-    if(!req.session.user){
-        res.redirect('/login');
+    if(req.session.user){
+        next();
     }else{
-        res.render('/');
+        res.redirect('/login');
     }
 }

@@ -2,8 +2,13 @@
     background: #dddddd;
 }
 .image_login{
-    /*background-image: url("/images/login_insidencias.png");*/
-    background:cadetblue;
+    background-image: url("/images/login_present.jpg");
+    background-size: cover;
+    position: relative;
+    min-height: 100%;
+    image-rendering:pixelated;
+
+    /*background:cadetblue;*/
 }
 .image_logo{
     text-align: center;
