@@ -16,8 +16,11 @@ html(lang='en')
     link(type='text/css', rel='stylesheet', href='http://fonts.googleapis.com/css?family=Oswald:400,700,300')
     link(type='text/css', rel='stylesheet', href='/code/vendors/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css')
     link(type='text/css', rel='stylesheet', href='/code/vendors/font-awesome/css/font-awesome.min.css')
-    link(type='text/css', rel='stylesheet', href='/code/vendors/bootstrap/css/bootstrap.min.css')
+    link(type='text/css', rel='stylesheet', href='/stylesheets/bootstrap.min.css')
     // LOADING STYLESHEET FOR PAGE
+    link(type='text/css', rel='stylesheet', href='/stylesheets/dataTables.bootstrap.min.css')
+    //link(type='text/css', rel='stylesheet', href='/code/vendors/bootstrap/css/bootstrap.min.css')
+
     // Loading style vendors
     //link(type='text/css', rel='stylesheet', href='/code/vendors/animate.css/animate.css')
     //link(type='text/css', rel='stylesheet', href='/code/vendors/jquery-pace/pace.css')
@@ -25,10 +28,11 @@ html(lang='en')
     link(type='text/css', rel='stylesheet', href='/code/vendors/jquery-notific8/jquery.notific8.min.css')
     link(type='text/css', rel='stylesheet', href='/code/vendors/bootstrap-daterangepicker/daterangepicker-bs3.css')
     // Loading style
-    
-    link(type='text/css', rel='stylesheet', href='/code/vendors/DataTables/media/css/jquery.dataTables.css')
-    link(type='text/css', rel='stylesheet', href='/code/vendors/DataTables/extensions/TableTools/css/dataTables.tableTools.min.css')
-    link(type='text/css', rel='stylesheet', href='/code/vendors/DataTables/media/css/dataTables.bootstrap.css')
+    link(type='text/css', rel='stylesheet', href='/stylesheets/select2.min.css')
+
+    //link(type='text/css', rel='stylesheet', href='/code/vendors/DataTables/media/css/jquery.dataTables.css')
+    //link(type='text/css', rel='stylesheet', href='/code/vendors/DataTables/extensions/TableTools/css/dataTables.tableTools.min.css')
+    //link(type='text/css', rel='stylesheet', href='/code/vendors/DataTables/media/css/dataTables.bootstrap.css')
     // Loading style vendors
     link(type='text/css', rel='stylesheet', href='/code/vendors/select2/select2-madmin.css')
     link(type='text/css', rel='stylesheet', href='/code/vendors/bootstrap-select/bootstrap-select.min.css')
@@ -97,19 +101,23 @@ html(lang='en')
         #page-wrapper
           #title-breadcrumb-option-demo.page-title-breadcrumb
             .page-header.pull-left
-              .page-title OSIS
+              .page-title
             
-          .page-content
+          .page-content.style-content
             
             block content
         #footer
           .copyright 2016 © UNJBG - Se Declaran Todos los Derechos Reservados Compañia J&C
     
+    //script(src='/javascripts/tables/jquery-1.12.3.js')
     script(src='/code/js/jquery-1.10.2.min.js')
+
     script(src='/code/js/jquery-migrate-1.2.1.min.js')
     script(src='/code/js/jquery-ui.js')
     // loading bootstrap js
-    script(src='/code/vendors/bootstrap/js/bootstrap.min.js')
+    //script(src='/code/vendors/bootstrap/js/bootstrap.min.js')
+    //script(src='/code/vendors/bootstrap/js/bootstrap.min.js')
+    script(src='/javascripts/bootstrap.min.js')
     script(src='/code/vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js')
     script(src='/code/js/html5shiv.js')
     script(src='/code/js/respond.min.js')
@@ -128,19 +136,37 @@ html(lang='en')
     script(src='/code/vendors/moment/moment.js')
     script(src='/code/vendors/bootstrap-datepicker/js/bootstrap-datepicker.js')
     script(src='/code/vendors/bootstrap-daterangepicker/daterangepicker.js')
+    
+    
     // CORE JAVASCRIPT
-    script(src='/code/js/main.js')
-    script(src='/javascripts/main.js')
-
-
     script(src='/code/vendors/select2/select2.min.js')
     script(src='/code/vendors/bootstrap-select/bootstrap-select.min.js')
     script(src='/code/vendors/multi-select/js/jquery.multi-select.js')
     script(src='/code/js/ui-dropdown-select.js')
     
+    script(src='/code/js/main.js')
+    script(src='/javascripts/main.js')
+    script(src='/javascripts/vfs_fonts.js')
+    script(src='/javascripts/pdfmake.min.js')
+    script(src='/javascripts/jquery.table2excel.js')
+    script(src='/javascripts/jquery.tabletojson.js')
     
-    //*script(src='/code/vendors/DataTables/media/js/jquery.dataTables.js')
+    //script(src='/stylesheets/select2.min.js')
+
+    script(src='/javascripts/tables/jquery.dataTables.min.js')
+    script(src='/javascripts/tables/dataTables.bootstrap.min.js')
+
+    //script(src='/code/vendors/DataTables/media/js/jquery.dataTables.js')
     //script(src='/code/vendors/DataTables/media/js/dataTables.bootstrap.js')
     //script(src='/code/vendors/DataTables/extensions/TableTools/js/dataTables.tableTools.min.js')
-    //script(src='/code/js/table-datatables.js')*/
+    
+    //script(src='/code/js/table-datatables.js')
+    
+    
+    
+    
+    
+    
+    
+    
     block scripts

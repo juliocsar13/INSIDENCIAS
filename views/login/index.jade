@@ -4,7 +4,7 @@ block none_bar
         .container
         
             .page-form    
-                form.form.form-login(action='/login',method='post',id='login-form',style='background:white')
+                form.form.form-login(action='/login',method='POST',id='login-form',style='background:white')
                     .header-content(style='background:white')
                         .image_logo
                             img(src='/images/osis1.png',style='width:160px')
@@ -20,7 +20,7 @@ block none_bar
                               i.fa.fa-key
                               input.form-control(type='password', placeholder='Contraseña', name='password')
                         .form-group.pull-right
-                            button#btn-login.btn.btn-lg.btn-success.btn-block(type='submit')
+                            button#login-btn.btn.btn-lg.btn-success.btn-block(type='submit')
                                 | Iniciar  
                                 i.fa.fa-chevron-circle-right
                         .clearfix

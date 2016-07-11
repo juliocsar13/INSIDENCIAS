@@ -8,15 +8,22 @@ $(function () {
 
     var tableTools = new $.fn.dataTable.TableTools( table, {
     	"sSwfPath": "../code/vendors/DataTables/extensions/TableTools/swf/copy_csv_xls_pdf.swf",
+        "sDom": '<"H"TCfr>t<"F"ip>',
+        "bStateSave": true,
+        "bJQueryUI": true,
+        "sPaginationType": "full_numbers",
+        "bProcessing": true,
+        "bServerSide": true,
         "buttons": [
-            "copy",
-            "csv",
-            "xls",
-            "pdf",
-            { "type": "print", "buttonText": "Print me!" }
+               "copy",
+               "csv",
+               "xls",
+               {
+                   "sExtends": "pdf",
+                   "sPdfMessage": "message.pdf"
+               },
+               "print"
         ]
     } );
     $(".DTTT_container").css("float","right");
 });
-
-

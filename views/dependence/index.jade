@@ -1,0 +1,28 @@
+extends ../layout
+block modals
+    include create
+block content
+    .panel
+        .panel-header
+        .panel-body
+            .form-body.pal
+                .row
+                    .col-md-12
+                        button.btn.btn-success(data-target='#registerDependenceModal',data-toggle='modal')
+                            i.fa.fa-plus
+                            |  Nuevo
+                        .table-responsive
+                            hr
+                            table#table_dependence.table.table-hover.table-striped.table-bordered.table-advanced.tablesorter.display.dataTable.no-footer
+                                thead
+                                    th #
+                                    th Nombre
+                                    th Siglas
+                                tbody
+                                    each dependence in dependences
+                                        tr
+                                            td=dependence.id
+                                            td=dependence.nameDependence
+                                            td=dependence.siglas
+block scripts
+    script(src='/javascripts/dependence/dependence.js')

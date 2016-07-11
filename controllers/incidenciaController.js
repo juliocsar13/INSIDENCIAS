@@ -32,8 +32,68 @@ module.exports.renderIncidencia = function(req,res){
 module.exports.getAllIncidencia = function(req,res){
 
     models.Incidencia.findAll().then(function(incidencias){
-		models.Person.findAll().then(function(usersIncidencias){
-			res.render('incidencias/index',{incidencias:incidencias,usersIncidencias:usersIncidencias})
+
+		models.Dependence.findAll().then(function(dependences){
+
+			models.Costumer.findAll().then(function(costumers){
+
+				models.Staff.findAll().then(function(staffs){
+
+					res.render('incidencias/index',{incidencias:incidencias,dependences:dependences,costumers:costumers,staffs:staffs})
+
+				})
+			})
 		})
     })
 }
+
+module.exports.upLoadIncidencia = function(req,res){
+	models.Incidencia.find({
+      where: {
+        id: req.params.id
+      }
+  }).then(function(incidencia) {
+      if(incidencia){
+        incidencia.updateAttributes({
+          state: req.body.state
+	  }).then(function(_incidencia) {
+		//  console.log("AQUI EN EL CONTROLADOR",_incidencia)
+
+		  res.send(_incidencia);
+
+        });
+      }
+    });
+
+}
+/*module.exports.getIncidenciaState = function(req,res){
+	models.Incidencia.find({
+		where:{
+			id:req.params.id
+		}
+	}).then(function(state){
+		if(state){
+			res.json(state)
+		}
+	})
+}*/
+/*
+module.exports.updateOneStateIncidencia = function(req,res){
+	models.Incidencia.findOne({
+		where:{
+			id:req.params.id
+		}
+	}).then(function(incidencia){
+		incidencia.updateAtributes({
+			state:req.body.state
+		}).then(function(incidencias){
+			res.render('incidencias/index',{incidencias:incidencias})
+		})
+		.catch(function (err) {
+			res.status(503)
+
+		})
+
+	})
+};
+*/

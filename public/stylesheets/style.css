@@ -20,3 +20,21 @@
 .form-login{
     box-shadow: -4px 7px 37px -2px rgba(0, 0, 0, 0.75);
 }
+
+.incide-state{
+    background: #dddddd;
+}
+/*#indidenciaState.on:after {
+  content: "Hide";
+  background-color: inherit;
+}
+*/
+.style-content{
+    padding: 10px 10px 50px 10px;
+}
+.btn-content-pendiente:before{
+    content: "Pendiente";
+}
+.btn-content-atendido:after{
+    content:"Atendido";
+}

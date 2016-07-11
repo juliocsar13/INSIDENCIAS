@@ -3,11 +3,15 @@
 var express         = require('express');
 var router          = express.Router();
 var jwt             = require('jsonwebtoken')
-var users           = require('./users')
+var staff           = require('./staff')
+var costumer        = require('./costumer')
+var dependence      = require('./dependence')
 var incidencias     = require('./incidencias')
 
 var middleware      = require('../controllers/middleware')
-var models = require('../models')
+var models          = require('../models')
+var secret          = "ilovescotchyscotch";
+
 
 router.get('/',function(req,res){
 
@@ -15,51 +19,37 @@ router.get('/',function(req,res){
 
 })
 
-router.use('/usuarios',users);
-router.use('/incidencias',incidencias)
+router.use('/clientes',costumer);
+router.use('/incidencias',incidencias);
+router.use('/dependencias',dependence);
+router.use('/usuarios',staff)
 
 router.route('/login')
     .get(function(req,res){
         res.render('login/index',{title:'OSIS'})
     })
-
     .post(function(req,res){
-        models.Person.findAndCountAll({
+        models.Staff.findAndCountAll({
                 where:{
                     dni:req.body.dni,
                     password:req.body.password
                 }
             }
         ).then(function(user){
-            console.log('DEVUELVE UN OBJETO : ',user)
+            //console.log('DEVUELVE UN OBJETO : ',user)
             if(user.count!=0){
-                req.session.user= req.body.dni;
-                res.redirect('/')
+                var token  = jwt.sign(user,secret);
+                req.session.token = token;
+                res.cookie(token);
+                res.redirect('/');
+
             }
         })
-    })
+    });
 
 router.get('/logout',function(req,res){
-    req.session.dni = null;
+    req.session.token = null;
     res.redirect('/login')
 })
 
-
 module.exports = router;
-
-
-
-/*var credentiales = {
-    dni:req.body.dni,
-    password: req.body.password
-}
-models.User.findOne(credentiales,function(err,user,count){
-    if(err){return res.status(500)}
-    if(!user){return res.status(404)}
-
-    var token = jwt = sign(user,superSecret);
-    return res.status.json(token);
-})
-req.session.token = req.body.token;
-console.log('TOKEN BODY',req.body.token)
-*/

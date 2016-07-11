@@ -3,25 +3,40 @@ module.exports = function(sequelize,DataType){
 
 	var Costumer = sequelize.define("Costumer",{
 
-		nombre:DataType.STRING,
-        apellido:DataType.STRING,
-        dni:DataType.STRING,
-        telefono:DataType.STRING,
+        dni:{
+                type:DataType.STRING,
+                unique:true
+        },
+		name:DataType.STRING,
+        lastname:DataType.STRING,
         email:DataType.STRING,
-        oficina:DataType.STRING,
-        departamento:DataType.STRING,
-        tipo:DataType.STRING
+        phone:DataType.STRING,
+        role:DataType.STRING,
+        register_date_person:DataType.STRING,
+		recorder:DataType.STRING
 
 	},{
-		/*classMethods:{
+		classMethods:{
 			associate:function(models){
-				User.belongsToMany(models.MaterialIB,{through:models.Solicita})
+				Costumer.belongsToMany(models.Incidencia,{through:models.IncidenciaPerson})
 			}
-		}*/
-	})
+		}
+	});
+
 	return Costumer;
 }
-/*lastname:DataType.STRING,
-		DNI:DataType.STRING,
-		direccion:DataType.STRING,
-		telefono:DataType.INTEGER*/
+
+/*
+,{
+	through:{
+		model:Operation,
+		unique:false,
+		scope:{
+			taggable:'post'
+		}
+	},
+	foreignKey:'incidencia_id',
+	constraints:false
+
+}
+*/

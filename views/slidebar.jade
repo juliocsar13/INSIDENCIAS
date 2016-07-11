@@ -17,25 +17,23 @@ li.user-panel
         a(href='extra-signin.html', data-hover='tooltip', title='Logout')
           i.fa.fa-sign-out
   .clearfix
-li.active
+li
   a(href='/incidencias')
     i.fa.fa-wheelchair.fa-fw
       .icon-bg.bg-orange
     span.menu-title INCIDENCIAS
 li
-  a(href='/usuarios')
+  a(href='/clientes')
     i.fa.fa-user.fa-fw
       .icon-bg.bg-orange
+    span.menu-title CLIENTES
+li
+  a(href='/usuarios')
+    i.fa.fa-group.fa-fw
+      .icon-bg.bg-pink
     span.menu-title USUARIOS
-
-//-
-    li
-      a(href='/cliente')
-        i.fa.fa-group.fa-fw
-          .icon-bg.bg-pink
-        span.menu-title CLIENTES
-    li
-      a(href='#')
-        i.fa.fa-wrench.fa-fw
-          .icon-bg.bg-pink
-        span.menu-title TECNICOS
+li
+  a(href='/dependencias')
+    i.fa.fa-building-o.fa-fw
+      .icon-bg.bg-pink
+    span.menu-title DEPENDENCIA

@@ -9,16 +9,16 @@ module.exports = function(sequelize,DataType){
 		state:DataType.STRING,
 		registration_date:DataType.STRING,
 		comment:DataType.STRING,
+		dependence:DataType.STRING,
 		notificacionMeans:DataType.STRING,
 		userRegister:DataType.STRING,
-		dependence:DataType.STRING,
 		technical:DataType.STRING
 
 
 	},{
 		classMethods:{
 			associate:function(models){
-				Incidencia.belongsToMany(models.Person,{through:models.IncidenciaPerson})
+				Incidencia.belongsToMany(models.Costumer,{through:models.IncidenciaPerson})
 			}
 		}
 	})

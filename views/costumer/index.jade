@@ -1,30 +1,38 @@
-extends layout
-
+extends ../layout
+block modals
+    include create
 block content
     .panel
         .panel-header
         .panel-body
-            .row
-                .col-md-12
-                    .table-responsive
-                        table.table
-                            thead
-                                th #
-                                th Nombre
-                                th Apellido
-                                th DNI
-                                th Telefono 
-                                th Email
-                                th oficina
-                                th Departamento
-                                th Tipo
-                            tbody
-                                td 1
-                                td Nombre
-                                td aaaaaa
-                                td bbbbbb
-                                td cccccc
-                                td cccccc
-                                td cccccc
-                                td cccccc
-                                td cccccc
+            .form-body.pal
+                .row
+                    .col-md-12
+                        button.btn.btn-success(data-target='#registerCostumerModal',data-toggle='modal')
+                            i.fa.fa-plus
+                            |  Nuevo
+                        .table-responsive
+                            hr
+                            table#table_costumer.table.table-hover.table-striped.table-bordered.table-advanced.tablesorter.display.dataTable.no-footer
+                                thead
+                                    th #
+                                    th Nombre
+                                    th Apellido
+                                    th DNI
+                                    th Rol
+                                    th Telefono
+                                    th Email
+                                    th Fecha
+                                tbody
+                                    each costumer in costumers
+                                        tr
+                                            td=costumer.id
+                                            td=costumer.name
+                                            td=costumer.lastname
+                                            td=costumer.dni
+                                            td=costumer.role
+                                            td=costumer.phone
+                                            td=costumer.email
+                                            td=costumer.register_date_person
+block scripts
+    script(src='/javascripts/costumer/costumer.js')

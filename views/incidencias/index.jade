@@ -1,45 +1,59 @@
 extends ../layout
 block modals
     include create
-    include ../users/create
+    include ../costumer/create
 block content
-    .page-content
-        .panel
+        .panel                              
             .panel-body
                 .form-body.pal
                     .row
-                        .col-md-12
+                            
                             button.btn.btn-success(type='button',href='#registerIncidenciaModal',data-toggle='modal')
                                 i.fa.fa-plus 
                                 |  Nuevo
+                    
+                            button#btnExportPDF.btn.btn-primary.pull-right(type='button',style='margin-left:10px')
+                                i.fa.fa-print 
+                                |   PDF
+                                                
+                            button#btnExportExcel.btn.btn-success.pull-right(type='button')
+                                i.fa.fa-print  
+                                |   Excel
+            
                             .table-responsive
                                 hr
-                                table#table_id.table.table-hover.table-striped.table-bordered.table-advanced.tablesorter.display.dataTable.no-footer
-                                    thead
-                                        th #
-                                        th Titulo
-                                        th Descripcion
-                                        //th Prioridad
-                                        th Estado
-                                        th Fecha de Registro
-                                        th Comentario
-                                        th Medio Notificacion
-                                        th Usuario
-                                        th Dependencia
-                                        th Tecnico
+                                table#table_incidencias.table.table-hover.table-striped.table-bordered.table-advanced.tablesorter.display.dataTable.no-footer
+                                    thead(style='background:blue')
+                                        tr
+                                            th #       
+                                            th Titulo
+                                            th Registrador
+                                            th Medio Notificacion
+                                            th Dependencia
+                                            th Descripcion
+                                            th Tecnico
+                                            th Fecha de Registro
+                                            th Comentario
+                                            th Estado
                                     tbody
                                         each incidencia in incidencias
                                             tr
                                                 td=incidencia.id
                                                 td=incidencia.title
+                                                td=incidencia.userRegister
+                                                td=incidencia.notificacionMeans
+                                                td=incidencia.dependence
                                                 td=incidencia.description
-                                                //td=incidencia.priority
-                                                td=incidencia.state
+                                                td=incidencia.technical
                                                 td=incidencia.registration_date
                                                 td=incidencia.comment
-                                                td=incidencia.notificacionMeans
-                                                td=incidencia.userRegister
-                                                td=incidencia.dependence
-                                                td=incidencia.technical
+                                                td               
+                                                    if(incidencia.state=='pendiente')
+                                                                          
+                                                        button#incidenciaState.toggleIncidencia.btn.btn-primary.btn-xs.btn-state(value=incidencia.state ,data-id=incidencia.id) Pendiente
+                                                    else
+                                                        button#incidenciaState.toggleIncidencia.btn.btn-success.btn-xs.btn-state(value=incidencia.state ,data-id=incidencia.id) Atendido
+
 block scripts
-    script(src='/javascripts/users.js')
+    script(src='/javascripts/incidencia/incidencia.js')
+    script(src='/javascripts/incidencia/report_incidencia.js')

@@ -14,6 +14,12 @@
                                 input.form-control(name='title')
                         .col-md-6
                             .form-group
+                                label.control-label() Dependencia
+                                select.select2-dependence-incide.form-control(name='dependence')
+                                    each dependence in dependences
+                                        option(value=dependence.siglas) #{dependence.nameDependence} (#{dependence.siglas})
+                        .col-md-6
+                            .form-group
                                 label.control-label() Prioridad
                                 input.form-control(type='number',name='priority')
                         .col-md-6
@@ -22,39 +28,41 @@
                                 select.form-control(name='notificacionMeans')
                                     option(value='telefono') Telefono
                                     option(value='documento') Documento
-                        .col-md-6    
-                            .form-group
-                                label.control-label() Usuario
-                                input.form-control(name='userRegister',id='#userRegisterIncidencia')
+                        
                         .col-md-6
                             .form-group
                                 label.control-label() Cliente
                                 .input-group
-                                    select.select2-size.form-control(name='dependence')
-                                        each dependencia in usersIncidencias
-                                            if (dependencia.role == 'cliente')
-                                                option(value=dependencia.dependence) #{dependencia.dependence} (#{dependencia.name} #{dependencia.lastname})
-                                                
+                                    select.select2-costumer-incide.form-control(name='nameCostumer')
+                                        each costumer in costumers
+                                            option(value=costumer.name+' '+costumer.lastname) #{costumer.name} #{costumer.lastname}
+                                            
                                     span.input-group-btn
-                                        button.btn.btn-success(type='button',data-target='#registerUserModal',data-toggle='modal')
-                                            i.fa.fa-plus                                            
+                                        button.btn.btn-success(type='button',data-target='#registerCostumerModal',data-toggle='modal')
+                                            i.fa.fa-plus
                         .col-md-6    
                             .form-group
                                 label.control-label() Tecnico
-                                select.select2-size.form-control(name='technical')
-                                    each tecnico in usersIncidencias
+                                select.select2-tecnico-incide.form-control(name='technical')
+                                    each tecnico in staffs
                                         if tecnico.role == 'tecnico'
-                                            option(value=tecnico.name +' '+ tecnico.lastname) #{tecnico.dependence} (#{tecnico.name}  #{tecnico.lastname}) 
-                        .col-md-6
-                            .form-group
-                                label.control-label() Fecha de registro
-                                input#datePerson.form-control(name='registration_date', readonly="readonly")
+                                            option(value=tecnico.name +' '+ tecnico.lastname) #{tecnico.dependence} (#{tecnico.name}  #{tecnico.lastname})
                         .col-md-6    
                             .form-group
                                 label.control-label() Estado
                                 select.form-control(name='state')
-                                    option(value='pendiente') Pendiente        
-                                    option(value='atendido') Atendido
+                                    option(value="pendiente") Pendiente        
+                                    option(value="atendido") Atendido
+                        
+                        .col-md-3
+                            .form-group
+                                label.control-label() Fecha de registro
+                                input#datePerson.form-control(name='registration_date', readonly="readonly")
+                        .col-md-3    
+                            .form-group
+                                label.control-label() Usuario
+                                input.form-control(name='userRegister',id='#userRegisterIncidencia', readonly="readonly")
+                        
                         .col-md-6
                             .form-group
                                 label.control-label() Descripcion

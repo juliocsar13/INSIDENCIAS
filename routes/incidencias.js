@@ -7,4 +7,9 @@ router.route('/')
     .get(incidenciaController.getAllIncidencia)
     .post(incidenciaController.createIncidencia);
 
+router.route('/:id')
+    .post(incidenciaController.upLoadIncidencia)
+
 module.exports = router;
+
+//.get(incidenciaController.getIncidenciaState)

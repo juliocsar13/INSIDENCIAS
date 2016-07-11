@@ -31,7 +31,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
     secret: 'ilovescotchyscotch',
     resave: true,
-    saveUninitialized: false
+    saveUninitialized: false,
+    cookie: {
+        httpOnly: true,
+        secure: true
+    }
 }))
 
 //app.set('superSecret',config.secret);
