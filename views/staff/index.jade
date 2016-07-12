@@ -1,6 +1,7 @@
 extends ../layout
 block modals
     include create
+    include edit
 block content
     .panel
         .panel-header
@@ -15,14 +16,21 @@ block content
                             hr
                             table#table_staff.table.table-hover.table-striped.table-bordered.table-advanced.tablesorter.display.dataTable.no-footer
                                 thead
-                                    th #
+                                    th(width='4%')
+                                        | #
                                     th Nombre
                                     th Apellido
-                                    th DNI
+                                    th(width='10%') 
+                                        | DNI
                                     th Rol
+                                    th Depencencia
                                     th Telefono 
-                                    th Email
-                                    th Fecha
+                                    th(width='15%')
+                                        | Email
+                                    th(width='13%') 
+                                        | Fecha
+                                    th(width='4%')
+                                        | Acciones
                                 tbody
                                     each user in userstaff
                                         tr
@@ -31,8 +39,12 @@ block content
                                             td=user.lastname
                                             td=user.dni
                                             td=user.role
+                                            td=user.dependence
                                             td=user.phone
                                             td=user.email
                                             td=user.register_date_staff
+                                            td
+                                                button#btnStaffModal.btn.btn-info.btn-xs(type='button', data-id=user.id ,data-toggle='modal',href='#editStaffModal') 
+                                                    | Editar
 block scripts
     script(src='/javascripts/staff/staff.js')

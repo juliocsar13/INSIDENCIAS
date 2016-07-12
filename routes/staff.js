@@ -9,4 +9,8 @@ router.route('/')
     .get(staffController.getAllStaff)
     .post(staffController.createStaff);
 
+router.route('/:id')
+    .get(staffController.UpLoadStaff)
+    .post(staffController.editAllStaff);
+
 module.exports = router;

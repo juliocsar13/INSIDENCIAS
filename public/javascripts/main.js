@@ -4,9 +4,10 @@ $(function(){
 
     toogleIncidenciaBtn.live('click',toggleIncidencia);
 
-    function changeState(){
+    function toggleIncidencia(){
         var data ={};
         self = $(this);
+
         if(self.hasClass('btn-primary')){
 
             data.state = "atendido";
@@ -14,20 +15,17 @@ $(function(){
             data.state = "pendiente";
         }
         var state = self.data('id');
-        /*$.get('/incidencias/'+state)
-            .done(function(state){
-
-            })*/
+        
         $.post('/incidencias/' + state , data)
-            .done(function(state){
+            .done(function(){
                 console.log("AQUI EN MAIN JS",state)
 
                 if(self.hasClass('btn-primary')){
 
                     self.removeClass('btn-primary');
                     self.addClass('btn-success');
-                    //self.removeClass('btn-content-pendiente')
-                    //self.addClass('btn-content-atendido');
+                    self.removeClass('btn-content-pendiente')
+                    self.addClass('btn-content-atendido');
 
 
 
@@ -35,8 +33,8 @@ $(function(){
                 } else {
                     self.removeClass('btn-success')
                     self.addClass('btn-primary')
-                //    self.removeClass('btn-content-atendido')
-                //    self.addClass('btn-content-pendiente')
+                    self.removeClass('btn-content-atendido')
+                    self.addClass('btn-content-pendiente')
 
                 }
             })

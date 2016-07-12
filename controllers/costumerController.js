@@ -33,3 +33,47 @@ module.exports.getAllCostumer = function (req,res){
 
 	});
 }
+
+module.exports.UpLoadDependence = function(req,res){
+
+	models.Costumer.find({
+		where:{
+			id:req.params.id
+		}
+
+	}).then(function(costumer){
+
+		if(costumer){
+			res.json(costumer)
+		}
+	})
+}
+
+module.exports.editAllDependence = function(req,res){
+
+	models.Costumer.find({
+
+		where:{
+			id:req.params.id
+		}
+
+	}).then(function(costumer){
+
+		if(costumer){
+			costumer.updateAttributes({
+
+				dni:req.body.dni,
+				name:req.body.name,
+				lastname:req.body.lastname,
+				phone:req.body.phone,
+				recorder:req.body.recorder,
+				register_date_person:req.body.register_date_person,
+				email:req.body.email,
+				role:req.body.role
+
+			}).then(function(costumers){
+				res.render('costumer/index',{costumers:costumers})
+			})
+		}
+	})
+}

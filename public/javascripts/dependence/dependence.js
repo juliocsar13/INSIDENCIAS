@@ -13,4 +13,40 @@ $(function(){
         }
 
     });
+
+    var btnEditDependence = $('#btnEditDependence');
+
+    btnEditDependence.live('click',getEditDependence)
+
+    function getEditDependence(){
+        //var data ={};
+        self = $(this);
+        var id = self.data('id');
+        console.log("data-id",id);
+
+        $.get('/dependencias/' + id)
+            .done(function(dependence){
+                $("#editIdDependence").val(dependence.id)
+                $("#editNameDependence").val(dependence.nameDependence)
+                $("#editSiglasDependence").val(dependence.siglas)
+        })
+    }
+
+    var btnEditSubmitDependence = $('#btnEditSubmitDependences_');
+
+    btnEditSubmitDependence.live('click',SubmitEditDependence)
+
+    function SubmitEditDependence(){
+
+        var data ={};
+
+        data.siglas         = $("#editSiglasDependence").val();
+        data.nameDependence = $("#editNameDependence").val();
+
+
+        var id = $("#editIdDependence").val()
+        $.post('/dependencias/' +id , data)
+            .done(function(_dependence_){
+            })
+    }
 })
