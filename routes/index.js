@@ -22,7 +22,7 @@ router.get('/',function(req,res){
 router.use('/clientes',costumer);
 router.use('/incidencias',incidencias);
 router.use('/dependencias',dependence);
-router.use('/usuarios',staff)
+router.use('/usuarios',staff);
 
 router.route('/login')
     .get(function(req,res){
@@ -40,7 +40,7 @@ router.route('/login')
             if(user.count!=0){
                 var token  = jwt.sign(user,secret);
                 req.session.token = token;
-                res.cookie(token);
+
                 res.redirect('/');
 
             }

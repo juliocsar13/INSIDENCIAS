@@ -50,9 +50,9 @@ block content
                                                 td               
                                                     if(incidencia.state=='pendiente')
                                                                           
-                                                        button#incidenciaState.toggleIncidencia.btn.btn-primary.btn-xs.btn-state(value=incidencia.state ,data-id=incidencia.id) Pendiente
+                                                        button#incidenciaState.toggleIncidencia.btn.btn-primary.btn-xs.btn-state.btn-content-pendiente(value=incidencia.state ,data-id=incidencia.id) 
                                                     else
-                                                        button#incidenciaState.toggleIncidencia.btn.btn-success.btn-xs.btn-state(value=incidencia.state ,data-id=incidencia.id) Atendido
+                                                        button#incidenciaState.toggleIncidencia.btn.btn-success.btn-xs.btn-state.btn-content-atendido(value=incidencia.state ,data-id=incidencia.id) 
 
 block scripts
     script(src='/javascripts/incidencia/incidencia.js')

@@ -1,63 +1,67 @@
-.modal.fade#registerStaffModal(role="dialog")
+.modal.fade#editStaffModal(role="dialog")
     .modal-dialog.modal-wide-width
         .modal-content
             .modal-header
                 button.close(type='button',data-dismiss='modal') x
-                h3.modal-title Registrar Usuario
+                h3.modal-title Editar Usuario
             .modal-body
-                form#form-user(method='post',action='/usuarios')
+                form
                     .row
                         .col-md-6
                             .form-group
                                 label.control-label() DNI
-                                input.form-control(type='text',name='dni')
+                                input#editIdStaff.form-control(type='hidden')
+                                input#editDniStaff.form-control(type='text',name='dni')
+                                
                         .col-md-6    
                             .form-group
                                 label.control-label() Rol
-                                select#select_costumer.form-control(type='text',name='role')
+                                select#editRoleStaff.form-control(type='text',name='role')
                                     option(value='usuario') Usuario
                                     option(value='tecnico') Tecnico        
                         
                         .col-md-6
                             .form-group
                                 label.control-label() Nombre
-                                input.form-control(type='text',name='name')
+                                input#editNameStaff.form-control(type='text',name='name')
+                                
                         .col-md-6
                             .form-group
                                 label.control-label() Apellido
-                                input.form-control(type='text',name='lastname')
+                                input#editLastnameStaff.form-control(type='text',name='lastname')
+                                
                         .col-md-6
                             .form-group
                                 label.control-label() Email
-                                input.form-control(type='text',name='email')
+                                input#editEmailStaff.form-control(type='text',name='email')
                         
                         .col-md-6
                             .form-group
                                 label.control-label() Dependencia
-                                select.select2-dependence-staff.form-control(type='text',name='dependence')
+                                select#editDependenceStaff.select2-dependence-staff.form-control(type='text',name='dependence')
                                     each dependence in dependences
                                         option(value=dependence.siglas) #{dependence.nameDependence} (#{dependence.siglas})
                                 
                         .col-md-6
                                 .form-group
                                     label.control-label() Contraseña
-                                    input.form-control(type='password',name='password')
+                                    input#editPasswordStaff.form-control(type='password',name='password')
+                                    
                         .col-md-6    
                             .form-group
                                 label.control-label() Telefono
-                                input.form-control(type='text',name='phone')
-                             
+                                input#editPhoneStaff.form-control(type='text',name='phone')
+                            
                         .col-md-6
                             .form-group
                                 label.control-label() Registrador 
-                                input#recorderUser.form-control(name='recorder', readonly="readonly")
+                                input#editRecorderStaff.form-control(name='recorder', readonly="readonly")
                 
                         .col-md-6
                             .form-group
                                 label.control-label() Fecha registro
-                                input#dateStaff.form-control(name='register_date_staff', readonly="readonly") 
+                                input#editDateStaff.form-control(name='register_date_staff', readonly="readonly") 
+                                
                         .col-md-12
-                            button.btn.btn-success.pull-right(type='submit',style='margin-left:5px') Registrar
+                            button#btnSaveSubmitStaff.btn.btn-success.pull-right(style='margin-left:5px') Guardar
                             button.btn.btn-default.pull-right(type='button',data-dismiss='modal') Cancelar
-        
-      

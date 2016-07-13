@@ -29,3 +29,42 @@ module.exports.getAllStaff = function(req,res){
         })
     })
 }
+
+module.exports.UpLoadStaff = function(req,res){
+    models.Staff.find({
+        where:{
+            id:req.params.id
+        }
+    }).then(function(staff){
+        if(staff){
+            res.json(staff);
+        }
+    })
+}
+
+module.exports.editAllStaff = function(req,res){
+    models.Staff.find({
+        where:{
+            id:req.params.id
+        }
+    }).then(function(staff){
+        if(staff){
+            staff.updateAttributes({
+
+                dni:req.body.dni,
+                password:req.body.password,
+                name:req.body.name,
+                lastname:req.body.lastname,
+                email:req.body.email,
+                phone:req.body.phone,
+                role:req.body.role,
+                dependence:req.body.dependence,
+                register_date_staff:req.body.register_date_staff,
+                recorder:req.body.recorder
+
+            }).then(function(userstaff){
+                res.render('staff/index',{userstaff:userstaff})
+            })
+        }
+    })
+}

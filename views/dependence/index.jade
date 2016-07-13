@@ -1,6 +1,7 @@
 extends ../layout
 block modals
     include create
+    include edit
 block content
     .panel
         .panel-header
@@ -18,12 +19,20 @@ block content
                                     th #
                                     th Nombre
                                     th Siglas
+                                    th Acciones
                                 tbody
                                     each dependence in dependences
                                         tr
                                             td=dependence.id
                                             td=dependence.nameDependence
                                             td=dependence.siglas
+                                            td
+                                                button#btnEditDependence.btn.btn-info.btn-xs(type="button",href='#editDependenceModal',data-id=dependence.id,data-toggle='modal')
+                                                    | Editar
 block scripts
     script(src='/javascripts/dependence/dependence.js')
+<<<<<<< HEAD
     script(src='/javascripts/validate-inputs/validate-dependence.js')
+=======
+    script(src='/javascripts/dependence/acctions.js')
+>>>>>>> 1bb9f9b9bbf4d6f4ffd87c76a04354d95a13167f

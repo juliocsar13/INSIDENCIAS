@@ -1,6 +1,7 @@
 extends ../layout
 block modals
     include create
+    include edit
 block content
     .panel
         .panel-header
@@ -23,6 +24,7 @@ block content
                                     th Telefono
                                     th Email
                                     th Fecha
+                                    th Acciones
                                 tbody
                                     each costumer in costumers
                                         tr
@@ -34,6 +36,9 @@ block content
                                             td=costumer.phone
                                             td=costumer.email
                                             td=costumer.register_date_person
+                                            td
+                                                button#btnEditCostumer.btn.btn-info.btn-xs(type='button',data-toggle='modal',href='#editCostumerModal',data-id=costumer.id)
+                                                    |Editar
 block scripts
     script(src='/javascripts/costumer/costumer.js')
     script(src='/javascripts/validate-inputs/validate-client.js')

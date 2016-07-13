@@ -9,4 +9,7 @@ router.route('/')
     .get(dependenceController.getAllDependence)
     .post(dependenceController.createDependence);
 
+router.route('/:id')
+    .get(dependenceController.UpLoadDependence)
+    .post(dependenceController.editAllDependence);
 module.exports = router;

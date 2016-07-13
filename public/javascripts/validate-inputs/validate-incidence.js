@@ -25,7 +25,7 @@ $(document).ready(function() {
       validators: {
         notEmpty: {
           message: ' '
-        }
+        },
         regexp: {
          regexp: /^[0-9]+$/,
          message: ' '

@@ -21,3 +21,34 @@ module.exports.getAllDependence = function(req,res){
         res.render('dependence/index',{dependences:dependences});
     });
 }
+
+module.exports.UpLoadDependence = function(req,res){
+    models.Dependence.find({
+        where:{
+            id:req.params.id
+        }
+    }).then(function(dependence){
+        if(dependence){
+            res.json(dependence)
+        }
+    })
+}
+
+module.exports.editAllDependence = function(req,res){
+    models.Dependence.find({
+        where:{
+            id:req.params.id
+        }
+    }).then(function(_dependence_){
+        console.log("EDITAR DEPENDENCIA",_dependence_);
+        if (_dependence_) {
+            _dependence_.updateAttributes({
+                nameDependence:req.body.nameDependence,
+                siglas:req.body.siglas
+            }).then(function(_dependence_){
+                console.log(_dependence_)
+                res.render('incidencias/index',{dependences:_dependence_})
+            })
+        }
+    })
+}
