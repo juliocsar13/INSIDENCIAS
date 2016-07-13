@@ -6,30 +6,30 @@
                 h3.modal-title Registrar incidencia
             .modal-body
             
-                form(method='post',action='/incidencias')
+                form#form-incidence(method='post',action='/incidencias')
                     .row
-                        .col-md-6
+                        .col-md-6.form-infieldtop
                             .form-group
                                 label.control-label() Titulo
                                 input.form-control(name='title')
-                        .col-md-6
+                        .col-md-6.form-infieldtop
                             .form-group
                                 label.control-label() Dependencia
                                 select.select2-dependence-incide.form-control(name='dependence')
                                     each dependence in dependences
                                         option(value=dependence.siglas) #{dependence.nameDependence} (#{dependence.siglas})
-                        .col-md-6
+                        .col-md-6.form-infieldtop
                             .form-group
                                 label.control-label() Prioridad
                                 input.form-control(type='number',name='priority')
-                        .col-md-6
+                        .col-md-6.form-infieldtop
                             .form-group
                                 label.control-label() Medio de notificacion
                                 select.form-control(name='notificacionMeans')
                                     option(value='telefono') Telefono
                                     option(value='documento') Documento
                         
-                        .col-md-6
+                        .col-md-6.form-infieldtop
                             .form-group
                                 label.control-label() Cliente
                                 .input-group
@@ -40,14 +40,14 @@
                                     span.input-group-btn
                                         button.btn.btn-success(type='button',data-target='#registerCostumerModal',data-toggle='modal')
                                             i.fa.fa-plus
-                        .col-md-6    
+                        .col-md-6.form-infieldtop    
                             .form-group
                                 label.control-label() Tecnico
                                 select.select2-tecnico-incide.form-control(name='technical')
                                     each tecnico in staffs
                                         if tecnico.role == 'tecnico'
                                             option(value=tecnico.name +' '+ tecnico.lastname) #{tecnico.dependence} (#{tecnico.name}  #{tecnico.lastname})
-                        .col-md-6    
+                        .col-md-6.form-infieldtop    
                             .form-group
                                 label.control-label() Estado
                                 select.form-control(name='state')
@@ -63,11 +63,11 @@
                                 label.control-label() Usuario
                                 input.form-control(name='userRegister',id='#userRegisterIncidencia', readonly="readonly")
                         
-                        .col-md-6
+                        .col-md-6.form-infieldtop
                             .form-group
                                 label.control-label() Descripcion
                                 textarea.form-control(rows='2',name='description')
-                        .col-md-6    
+                        .col-md-6.form-infieldtop    
                             .form-group
                                 label.control-label() Comentario/Tecnico
                                 textarea.form-control(rows='2',name='comment')

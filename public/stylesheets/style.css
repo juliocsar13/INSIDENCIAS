@@ -1,3 +1,7 @@
+body{
+  font-weight: lighter;
+}
+
 #menu-toggle:disabled {
     background: #dddddd;
 }
@@ -37,4 +41,33 @@
 }
 .btn-content-atendido:after{
     content:"Atendido";
+}
+
+.modal-header{
+  background-color: #2f889a !important;
+  color: white;
+  text-align: center;
+}
+
+.modal-header:after{
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 30px solid #2f889a;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  margin-left: 45%;
+}
+.form-control{
+  font-weight: lighter;
+}
+.has-error .form-control {
+    border-color: #db2506;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    color: #db2506;
+}
+.control-label{
+  font-weight: bold;
 }

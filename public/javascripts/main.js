@@ -4,7 +4,7 @@ $(function(){
 
     toogleIncidenciaBtn.live('click',toggleIncidencia);
 
-    function changeState(){
+    function toggleIncidencia(){
         var data ={};
         self = $(this);
         if(self.hasClass('btn-primary')){
