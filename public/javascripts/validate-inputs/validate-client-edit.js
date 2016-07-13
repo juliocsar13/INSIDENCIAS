@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('#form-client').bootstrapValidator({
+  $('#form-client-edit').bootstrapValidator({
 	 message: 'Este valor no es valido',
 	 feedbackIcons: {
 		 valid: 'glyphicon glyphicon-ok',

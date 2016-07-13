@@ -2,12 +2,9 @@ body{
   background: #DCDDDF;
 	background-repeat: no-repeat;
 	background-size: 100vw 100vh;
-	color: #000;
-	font: 14px Arial;
+  font-family: Arial;
 	margin: 0 auto;
-	padding-top: 100px;
 	position: relative;
-  font-weight: lighter;
 }
 
 #menu-toggle:disabled {
@@ -52,7 +49,7 @@ body{
 }
 
 .modal-header{
-  background-color: #2f889a !important;
+  background-color: #2ecc71 !important;
   color: white;
   text-align: center;
 }
@@ -62,7 +59,7 @@ body{
   content: "";
   width: 0;
   height: 0;
-  border-top: 30px solid #2f889a;
+  border-top: 30px solid #2ecc71;
   border-left: 25px solid transparent;
   border-right: 25px solid transparent;
   margin-left: 45%;
@@ -70,12 +67,45 @@ body{
 .form-control{
   font-weight: lighter;
 }
+.modal-body{
+  padding-left: 80px;
+  padding-right: 80px;
+}
 .has-error .form-control {
     border-color: #db2506;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     color: #db2506;
 }
+.has-error .form-control:focus {
+    border-color: #db2506;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    color: #db2506;
+}
+
+.has-success .form-control{
+  color: #5cb85c;
+  border-color: #5cb85c;
+}
+.has-success .form-control:focus{
+  color: #5cb85c;
+  border-color: #5cb85c;
+}
 .control-label{
   font-weight: bold;
+}
+
+.btn-success{
+  background-color: #2ecc71;
+}
+.btn-success:hover{
+  background-color: #27ae60 !important;
+}
+
+.btn-primary{
+  background-color: #e74c3c;
+}
+.btn-primary:hover{
+  background-color: #c0392b !important;
 }

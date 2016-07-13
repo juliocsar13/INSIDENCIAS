@@ -15,7 +15,7 @@ block content
                         .table-responsive
                             hr
                             table#table_costumer.table.table-hover.table-striped.table-bordered.table-advanced.tablesorter.display.dataTable.no-footer
-                                thead
+                                theadtable 
                                     th #
                                     th Nombre
                                     th Apellido
@@ -40,5 +40,6 @@ block content
                                                 button#btnEditCostumer.btn.btn-info.btn-xs(type='button',data-toggle='modal',href='#editCostumerModal',data-id=costumer.id)
                                                     |Editar
 block scripts
-    script(src='/javascripts/costumer/costumer.js')
-    script(src='/javascripts/validate-inputs/validate-client.js')
+  script(src='/javascripts/costumer/costumer.js')
+  script(src='/javascripts/validate-inputs/validate-client.js')
+  script(src='/javascripts/validate-inputs/validate-client-edit.js')

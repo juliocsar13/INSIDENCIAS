@@ -27,9 +27,13 @@ $(document).ready(function() {
           message: ' '
         },
         regexp: {
-         regexp: /^[0-9]+$/,
+         regexp: /^[1-5]+$/,
          message: ' '
-       }
+       },
+       stringLength: {
+         max: 1,
+         message: ' '
+       },
       }
     },
     notificacionMeans: {
