@@ -1,4 +1,12 @@
 body{
+  background: #DCDDDF;
+	background-repeat: no-repeat;
+	background-size: 100vw 100vh;
+	color: #000;
+	font: 14px Arial;
+	margin: 0 auto;
+	padding-top: 100px;
+	position: relative;
   font-weight: lighter;
 }
 
@@ -6,7 +14,7 @@ body{
     background: #dddddd;
 }
 .image_login{
-    background-image: url("/images/login_present.jpg");
+    background-image: url("../images/2.jpg");
     background-size: cover;
     position: relative;
     min-height: 100%;
