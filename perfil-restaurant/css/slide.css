@@ -1,0 +1,54 @@
+.slider {
+  overflow: hidden;
+}
+
+.figure{
+  position: relative;
+  width: 300%;
+  height: 80%;
+  margin: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+}
+.component{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  font-weight: lighter;
+  color: white;
+
+}
+#component-1{
+  background-image: url("../img/fondo1.png");
+  }
+#component-2 {
+  background-image: url("../img/fondo2.png");
+}
+
+.component-1 > h2 {
+  font-size: 35px;
+  margin-bottom: 8px;
+
+}
+.component-2 > h2 {
+   font-size: 35px;
+   margin-bottom: 8px;
+ }
+
+ .bx-wrapper{
+    margin: 0 auto 0px !important;
+}
+
+.bx-wrapper .bx-viewport {
+  position: static !important;
+  border: 0px solid #fff;
+}
+.bx-wrapper .bx-pager{
+  bottom: 30px !important
+}
